@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Author: Tara Brown -->
+<!-- Doc name: 08.31.25.html -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +8,7 @@
     <title>2025 - Germantown MetroPark Photos</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Gallery grid */
         .photo-gallery {
             display: flex;
             flex-wrap: wrap;
@@ -15,9 +18,76 @@
         }
 
             .photo-gallery img {
-                max-width: 250px;
                 border-radius: 8px;
                 box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            }
+
+        .standard-photo {
+            max-width: 250px;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        h1, h2, p {
+            color: black;
+            text-align: center;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+            .lightbox:target {
+                display: flex;
+            }
+
+            .lightbox img {
+                max-width: 90vw;
+                max-height: 80vh;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            }
+
+        .lb-close, .lb-prev, .lb-next {
+            position: absolute;
+            color: #fff;
+            text-decoration: none;
+            font-size: 40px;
+            font-weight: bold;
+            padding: 5px 10px;
+            user-select: none;
+        }
+
+        .lb-close {
+            top: 20px;
+            right: 25px;
+        }
+
+        .lb-prev {
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+        }
+
+        .lb-next {
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+            .lb-prev:hover, .lb-next:hover, .lb-close:hover {
+                color: #ddd;
             }
     </style>
 </head>
@@ -34,25 +104,107 @@
     <main>
         <h2>Photo Memories from 2025</h2>
         <div class="photo-gallery">
-            <img src="images/083125/cottonwood.jpg">  
-            <img src="images/083125/08.31.25.2.jpg">
-            <img src="images/083125/08.31.25.3.jpg">
-            <img src="images/083125/08.31.25.4.jpg">
-            <img src="images/083125/08.31.25.5.jpg">
-            <img src="images/083125/08.31.25.6.jpg">
-            <img src="images/083125/08.31.25.7.jpg">
-            <img src="images/083125/becky.jpg">
-            <img src="images/083125/08.31.25.1.jpg">
-            <img src="images/083125/cousinkids.jpg">
-            <img src="images/083125/cousins.jpg">
-            <img src="images/083125/group.jpg">
-            <img src="images/083125/tree.jpg">
+            <a href="#img1"><img src="images/083125/cottonwood.jpg" class="standard-photo"></a>
+            <a href="#img2"><img src="images/083125/group.jpg" class="standard-photo"></a>
+            <a href="#img3"><img src="images/083125/becky.jpg" class="standard-photo"></a>
+            <a href="#img4"><img src="images/083125/08.31.25.1.jpg" class="standard-photo"></a>
+            <a href="#img5"><img src="images/083125/08.31.25.3.jpg" class="standard-photo"></a>
+            <a href="#img6"><img src="images/083125/08.31.25.4.jpg" class="standard-photo"></a>
+            <a href="#img7"><img src="images/083125/08.31.25.2.jpg"></a>
+            <a href="#img8"><img src="images/083125/08.31.25.5.jpg"></a>
+            <a href="#img9"><img src="images/083125/08.31.25.6.jpg"></a>
+            <a href="#img10"><img src="images/083125/08.31.25.7.jpg"></a>
+            <a href="#img11"><img src="images/083125/cousinkids.jpg"></a>
+            <a href="#img12"><img src="images/083125/cousins.jpg"></a>
+            <a href="#img13"><img src="images/083125/tree.jpg"></a>
         </div>
-        <p>Last Updated: September 2025</p>
+
+        <!-- Lightbox slides -->
+        <div id="img1" class="lightbox">
+            <a href="#" class="lb-close">×</a>
+            <a href="#img13" class="lb-prev">‹</a>
+            <img src="images/083125/cottonwood.jpg">
+            <a href="#img2" class="lb-next">›</a>
+        </div>
+        <div id="img2" class="lightbox">
+            <a href="#" class="lb-close">×</a>
+            <a href="#img1" class="lb-prev">‹</a>
+            <img src="images/083125/group.jpg">
+            <a href="#img3" class="lb-next">›</a>
+        </div>
+        <div id="img3" class="lightbox">
+            <a href="#" class="lb-close">×</a>
+            <a href="#img2" class="lb-prev">‹</a>
+            <img src="images/083125/becky.jpg">
+            <a href="#img4" class="lb-next">›</a>
+        </div>
+        <div id="img4" class="lightbox">
+            <a href="#" class="lb-close">×</a>
+            <a href="#img3" class="lb-prev">‹</a>
+            <img src="images/083125/08.31.25.1.jpg">
+            <a href="#img5" class="lb-next">›</a>
+        </div>
+        <div id="img5" class="lightbox">
+            <a href="#" class="lb-close">×</a>
+            <a href="#img4" class="lb-prev">‹</a>
+            <img src="images/083125/08.31.25.3.jpg">
+            <a href="#img6" class="lb-next">›</a>
+        </div>
+        <div id="img6" class="lightbox">
+            <a href="#" class="lb-close">×</a>
+            <a href="#img5" class="lb-prev">‹</a>
+            <img src="images/083125/08.31.25.4.jpg">
+            <a href="#img7" class="lb-next">›</a>
+        </div>
+        <div id="img7" class="lightbox">
+            <a href="#" class="lb-close">×</a>
+            <a href="#img6" class="lb-prev">‹</a>
+            <img src="images/083125/08.31.25.2.jpg">
+            <a href="#img8" class="lb-next">›</a>
+        </div>
+        <div id="img8" class="lightbox">
+            <a href="#" class="lb-close">×</a>
+            <a href="#img7" class="lb-prev">‹</a>
+            <img src="images/083125/08.31.25.5.jpg">
+            <a href="#img9" class="lb-next">›</a>
+        </div>
+        <div id="img9" class="lightbox">
+            <a href="#" class="lb-close">×</a>
+            <a href="#img8" class="lb-prev">‹</a>
+            <img src="images/083125/08.31.25.6.jpg">
+            <a href="#img10" class="lb-next">›</a>
+        </div>
+        <div id="img10" class="lightbox">
+            <a href="#" class="lb-close">×</a>
+            <a href="#img9" class="lb-prev">‹</a>
+            <img src="images/083125/08.31.25.7.jpg">
+            <a href="#img11" class="lb-next">›</a>
+        </div>
+        <div id="img11" class="lightbox">
+            <a href="#" class="lb-close">×</a>
+            <a href="#img10" class="lb-prev">‹</a>
+            <img src="images/083125/cousinkids.jpg">
+            <a href="#img12" class="lb-next">›</a>
+        </div>
+        <div id="img12" class="lightbox">
+            <a href="#" class="lb-close">×</a>
+            <a href="#img11" class="lb-prev">‹</a>
+            <img src="images/083125/cousins.jpg">
+            <a href="#img13" class="lb-next">›</a>
+        </div>
+        <div id="img13" class="lightbox">
+            <a href="#" class="lb-close">×</a>
+            <a href="#img12" class="lb-prev">‹</a>
+            <img src="images/083125/tree.jpg">
+            <a href="#img1" class="lb-next">›</a>
+        </div>
+
     </main>
 
     <footer>
         <p>© 2025 Our Family Reunion</p>
+        <small>Last updated: September 1, 2025</small>
     </footer>
 </body>
 </html>
+
