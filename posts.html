@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Reunion Messages</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Family Reunion Guestbook</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="photos.html">Photo Gallery</a>
+            <a href="posts.html">Family Messages</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Family Messages</h2>
+        <p>Use the box below to post your message. Everyone can see and reply!</p>
+
+        <!-- Disqus Comments Section -->
+        <div id="disqus_thread"></div>
+        <script>
+      var disqus_config = function () {
+        this.page.url = window.location.href;
+        this.page.identifier = window.location.pathname;
+        this.language = "en";
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://lantiscrigler.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+        </script>
+        <noscript>
+            Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+
+        <hr>
+        <p><strong>Last Updated:</strong> August 31, 2025</p>
+    </main>
+
+    <footer>
+        <p>© 2025 Our Family Reunion</p>
+    </footer>
+</body>
+</html>

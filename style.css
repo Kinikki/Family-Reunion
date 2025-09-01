@@ -1,0 +1,116 @@
+/* General body styles */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #fefcf8; /* light cream background */
+	color: #333;
+	text-align: center; /* centers all text by default */
+}
+
+/* Header */
+header {
+	background: #4CAF50;
+	color: white;
+	padding: 1em 0;
+}
+
+nav a {
+	color: white;
+	margin: 0 12px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+	nav a:hover {
+		text-decoration: underline;
+	}
+
+/* Main content */
+main {
+	max-width: 700px;
+	margin: 30px auto;
+	padding: 0 20px;
+	text-align: center; /* center all content in main */
+}
+
+h2 {
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+
+p {
+	font-size: 1.1em;
+	margin-bottom: 20px;
+}
+
+/* Reunion date box */
+.reunion-date {
+	margin: 20px auto;
+	padding: 15px 20px;
+	background: #fffae6;
+	border: 2px solid #ffcc00;
+	border-radius: 8px;
+	display: inline-block;
+	font-size: 1.3em;
+	font-weight: bold;
+	color: #333;
+	box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Photo list styling */
+.photo-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+	.photo-list li {
+		margin: 10px 0;
+	}
+
+	.photo-list a {
+		color: #1a73e8;
+		text-decoration: none;
+		font-weight: bold;
+		display: inline-block;
+		padding: 8px 12px;
+		border-radius: 6px;
+		background-color: #e0f7fa;
+		transition: background-color 0.3s;
+	}
+
+		.photo-list a:hover {
+			background-color: #b2ebf2;
+		}
+
+/* Disqus comment section styling */
+#disqus_thread {
+	background-color: #f9f9f9; /* light gray background */
+	padding: 20px;
+	border-radius: 8px;
+	margin-top: 20px;
+}
+
+	/* Make Disqus text readable */
+	#disqus_thread,
+	#disqus_thread * {
+		color: #333 !important;
+		font-family: Arial, sans-serif !important;
+	}
+
+		#disqus_thread a {
+			color: #1a73e8 !important;
+		}
+
+		#disqus_thread .post-content {
+			font-size: 1em;
+		}
+
+/* Footer */
+footer {
+	background: #4CAF50;
+	color: white;
+	padding: 15px 0;
+	margin-top: 30px;
+}
