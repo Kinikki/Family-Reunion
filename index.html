@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Author: Tara Brown -->
+<!-- Doc name: index.html -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +8,7 @@
     <title>Family Reunion Home</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Featured group photo */
         .featured-photo {
             margin: 20px auto;
             text-align: center;
@@ -16,6 +19,29 @@
                 width: 100%;
                 border-radius: 10px;
                 box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            }
+
+        /* Glass-style reunion date */
+        .reunion-date {
+            margin: 20px auto;
+            padding: 15px 25px;
+            background: rgba(255, 183, 77, 0.5); /* 50% opacity orange-yellow */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 3px solid #FF8F00;
+            border-radius: 12px;
+            display: inline-block;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #4E342E;
+            box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.2s ease;
+        }
+
+            .reunion-date:hover {
+                transform: scale(1.05);
             }
     </style>
 </head>
@@ -32,28 +58,26 @@
     <main>
         <h2>Together is our favorite place to be.</h2>
         <div class="featured-photo">
-            <img src="images/083125/group.jpg">
+            <img src="images/083125/group.jpg" alt="Family Group Photo">
         </div>
+
         <div class="reunion-date">
             <p>NEXT REUNION SCHEDULED:</p>
-            <p>Sunday, June 28th, 2026.</p>
+            <p>Sunday, June 28th, 2026</p>
             <p>Location TBD</p>
         </div>
+
         <p>Welcome to our family reunion website!</p>
-        <p>
-            Here you can see photos from past reunions, leave messages,
-            and stay up-to-date with all family events.
-        </p>
+        <p>Here you can see photos from past reunions, leave messages, and stay up-to-date with all family events.</p>
 
         <h2>Latest News</h2>
         <p>Check back here for updates as we plan the reunion!</p>
-
         <p>Check out photos, leave a message, and share your memories!</p>
-        <p><strong>Last Updated:</strong> August 31, 2025</p>
     </main>
 
     <footer>
         <p>© 2025 Our Family Reunion</p>
+        <small>Last updated: September 1, 2025</small>
     </footer>
 </body>
 </html>
