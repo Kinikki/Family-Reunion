@@ -209,3 +209,16 @@ h2 {
 	letter-spacing: 1px;
 	text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* subtle shadow for depth */
 }
+.photo-gallery img {
+	width: 250px; /* Fixed width for all thumbnails */
+	height: 180px; /* Fixed height for uniform size */
+	object-fit: cover; /* Crops edges slightly to fit nicely */
+	border-radius: 8px;
+	box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+	transition: transform 0.2s ease;
+	cursor: pointer;
+}
+
+	.photo-gallery img:hover {
+		transform: scale(1.05);
+	}
