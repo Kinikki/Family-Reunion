@@ -1,43 +1,141 @@
 <!DOCTYPE html>
-<!-- Author: Tara Brown -->
-<!-- Doc name: photos.html -->
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Family Photos</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Photos</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* Full page background */
+body {
+    position: relative;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fefcf8;
+    color: black;
+    text-align: center;
+    z-index: 1;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/background.jpg") center/cover no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+}
 
-    <!-- Lightbox2 CSS & JS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+/* Header & footer */
+header, footer {
+    background: rgba(76, 175, 80, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: black;
+    padding: 1em 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    text-align: center;
+}
+header h1, footer p {
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+footer small {
+    display: block;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
 
+/* Navigation */
+nav a {
+    color: black;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+nav a:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+}
+
+/* Page headings */
+h1, h2 {
+    color: black;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Photo list */
+.photo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.photo-list li {
+    margin: 10px 0;
+}
+.highlight-link {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: rgba(255, 192, 203, 0.5);
+    color: black;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    outline: none;
+}
+.highlight-link:hover {
+    background-color: rgba(255, 105, 180, 0.7);
+    transform: scale(1.03);
+    color: purple;
+    cursor: pointer;
+}
+
+/* Thumbnail for the link image */
+.link-thumbnail {
+    width: 60px;
+    height: auto;
+    margin-left: 8px;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Family Reunion Photo Gallery</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="photos.html">Photo Gallery</a>
-            <a href="posts.html">Family Messages</a>
-        </nav>
-    </header>
+<header>
+    <h1>Family Reunion Photo Gallery</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="photos.html">Photo Gallery</a>
+        <a href="posts.html">Family Messages</a>
+    </nav>
+</header>
 
-    <main>
-        <h2>Our Memories by Year</h2>
-        <ul class="photo-list">
-            <li>
-                <a href="08.31.25.html" class="highlight-link">
-                    2025 – Germantown MetroPark
-                    <img src="images/083125/group.jpg" alt="Group Photo" class="link-thumbnail">
-                </a>
-            </li>
-            <!-- Add more years below as needed -->
-        </ul>
-    </main>
+<main>
+    <h2>Our Memories by Year</h2>
+    <ul class="photo-list">
+        <li>
+            <a href="08.31.25.html" class="highlight-link">
+                2025 – Germantown MetroPark
+                <img src="images/083125/group.jpg" alt="Group Photo" class="link-thumbnail">
+            </a>
+        </li>
+        <!-- Add more years below as needed -->
+        <!-- <li><a href="photos/2024.html">2024 – Location Name</a></li> -->
+    </ul>
+    <hr>
+</main>
 
-    <footer>
-        <p>© 2025 Our Family Reunion</p>
-        <small>Last updated: September 1, 2025</small>
-    </footer>
+<footer>
+    <p>© 2025 Our Family Reunion</p>
+    <small>Last updated: September 1, 2025</small>
+</footer>
 </body>
 </html>
