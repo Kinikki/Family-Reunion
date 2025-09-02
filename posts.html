@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <!-- Author: Tara Brown -->
-<!-- Doc name: posts.html -->
+<!-- Doc name: photos.html -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messages</title>
+    <title>Family Photos</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Featured thumbnail for link */
+        .photo-list img {
+            max-width: 60px;
+            vertical-align: middle;
+            margin-left: 10px;
+            border-radius: 5px;
+        }
+
+        /* Links with hover effect */
+        .photo-list a {
+            color: black; /* base text black */
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background-color: rgba(255, 192, 203, 0.5); /* light pink 50% opacity */
+            transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+            outline: none; /* remove focus outline */
+        }
+
+            .photo-list a:hover {
+                background-color: rgba(255, 192, 203, 0.8); /* slightly darker pink */
+                transform: scale(1.05);
+                color: purple; /* hover text purple */
+                cursor: pointer;
+            }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Family Reunion Guestbook</h1>
+        <h1>Photo Gallery</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="photos.html">Photo Gallery</a>
@@ -19,29 +48,17 @@
     </header>
 
     <main>
-        <h2>Family Messages</h2>
-        <p>Use the box below to post your message. Everyone can see and reply!</p>
-
-        <!-- Disqus Comments Section -->
-        <div id="disqus_thread"></div>
-        <script>
-            var disqus_config = function () {
-                this.page.url = window.location.href;
-                this.page.identifier = window.location.pathname;
-                this.language = "en";
-            };
-            (function () {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://lantiscrigler.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>
-            Please enable JavaScript to view the
-            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-
+        <h2>Our Memories by Year</h2>
+        <ul class="photo-list">
+            <li>
+                <a href="08.31.25.php" class="highlight-link">
+                    <img src="images/083125/group.jpg" class="thumbnail">
+                    2025 – Germantown MetroPark
+                </a>
+            </li>
+            <!-- Add more years below as needed -->
+            <!-- <li><a href="2024.html">2024 – Location Name</a></li> -->
+        </ul>
         <hr>
     </main>
 
