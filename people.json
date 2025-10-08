@@ -6,8 +6,7 @@
         "death": null,
         "spouse": "l002",
         "parents": [],
-        "children": [ "l003" ],
-        "photo": 
+        "children": [ "l003" ]
     },
     {
         "id": "l002",
@@ -16,9 +15,8 @@
         "death": null,
         "spouse": "l001",
         "parents": [],
-        "children": [ "l003" ],
-        "photo": 
-    },
+        "children": [ "l003" ]
+            },
     {
         "id": "c001",
         "name": "Samuel Crigler",
@@ -26,7 +24,7 @@
         "death": 1973,
         "spouse": "c002",
         "parents": [],
-        "children": [ "c003" ],
+        "children": [ "c003" ]
             },
     {
         "id": "c002",
@@ -35,7 +33,7 @@
         "death": 1928,
         "spouse": "c001",
         "parents": [],
-        "children": [ "c003" ],
+        "children": [ "c003" ]
            },
     {
         "id": "l003",
@@ -44,7 +42,7 @@
         "death": 1989,
         "spouse": "c003",
         "parents": [ "l001", "l002" ],
-        "children": [ "gc001", "gc002", "gc003", "gc004", "gc005", "gc006", "gc007" ],
+        "children": [ "gc001", "gc002", "gc003", "gc004", "gc005", "gc006", "gc007" ]
            },
     {
         "id": "c003",
@@ -53,7 +51,7 @@
         "death": 1998,
         "spouse": "l003",
         "parents": [ "c001", "c002" ],
-        "children": [ "gc001", "gc002", "gc003", "gc004", "gc005", "gc006", "gc007" ],
+        "children": [ "gc001", "gc002", "gc003", "gc004", "gc005", "gc006", "gc007" ]
            },
     {
         "id": "gc001",
@@ -62,7 +60,7 @@
         "death": 2008,
         "spouse": null,
         "parents": [ "l003", "c003" ],
-        "children": [],
+        "children": []
            },
     {
         "id": "gc002",
@@ -71,7 +69,7 @@
         "death": null,
         "spouse": null,
         "parents": [ "l003", "c003" ],
-        "children": [],
+        "children": []
            },
     {
         "id": "gc003",
@@ -80,7 +78,7 @@
         "death": null,
         "spouse": null,
         "parents": [ "l003", "c003" ],
-        "children": [],
+        "children": []
            },
     {
         "id": "gc004",
@@ -89,7 +87,7 @@
         "death": null,
         "spouse": null,
         "parents": [ "l003", "c003" ],
-        "children": [],
+        "children": []
             },
     {
         "id": "gc005",
@@ -98,7 +96,7 @@
         "death": null,
         "spouse": null,
         "parents": [ "l003", "c003" ],
-        "children": [],
+        "children": []
            },
     {
         "id": "gc006",
@@ -107,7 +105,7 @@
         "death": null,
         "spouse": null,
         "parents": [ "l003", "c003" ],
-        "children": [],
+        "children": []
            },
     {
         "id": "gc007",
@@ -116,6 +114,6 @@
         "death": null,
         "spouse": null,
         "parents": [ "l003", "c003" ],
-        "children": [],
+        "children": []
             }
 ]
