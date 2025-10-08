@@ -1,90 +1,119 @@
+<!DOCTYPE html>
 <!-- Author: Tara Brown -->
 <!-- Doc name: photos.html -->
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Family Photos</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Photo list styling */
-        .photo-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Photos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="lantis.ico" type="image/x-icon">
+  <style>
+    /* Photo list styling */
+    .photo-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-            .photo-list li {
-                margin: 10px 0;
-            }
+    .photo-list li {
+      margin: 10px 0;
+    }
 
-        /* Highlighted link with thumbnail on the left */
-        .highlight-link {
-            display: flex; /* flex for text + image */
-            align-items: center; /* vertically center text with thumbnail */
-            gap: 10px; /* spacing between thumbnail and text */
-            padding: 6px 12px;
-            background-color: rgba(255, 192, 203, 0.5); /* light pink 50% opacity */
-            color: black;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
-            outline: none;
-        }
+    /* Highlighted link with thumbnail on the left */
+    .highlight-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 12px;
+      background-color: rgba(255, 192, 203, 0.5); /* light pink */
+      color: black;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+      outline: none;
+    }
 
-            .highlight-link:hover {
-                background-color: rgba(255, 105, 180, 0.7); /* brighter pink */
-                transform: scale(1.03);
-                color: purple;
-                cursor: pointer;
-            }
+    .highlight-link:hover {
+      background-color: rgba(255, 105, 180, 0.7); /* brighter pink */
+      transform: scale(1.03);
+      color: purple;
+      cursor: pointer;
+    }
 
-        /* Thumbnail for all links - consistent size */
-        .link-thumbnail {
-            width: 50px;
-            height: 50px;
-            object-fit: cover; /* crop if needed */
-            border-radius: 4px;
-            flex-shrink: 0; /* prevent shrinking/stretching */
-            vertical-align: middle;
-        }
+    /* Thumbnail for all links */
+    .link-thumbnail {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 4px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
 
-        h1, h2 {
-            color: black;
-            text-align: center;
-        }
-    </style>
+    h1, h2 {
+      color: black;
+      text-align: center;
+    }
+
+    .call-to-action {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1.05em;
+    }
+
+    .call-to-action a {
+      color: #FF6F00;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Family Reunion Photo Gallery</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="photos.html">Photo Gallery</a>
-            <a href="posts.html">Family Messages</a>
-        </nav>
-    </header>
+  <header>
+    <h1>Family Reunion Photo Gallery</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="photos.html">Photo Gallery</a>
+      <a href="posts.html">Family Messages</a>
+      <a href="messages.html">Contact Us</a>
+      <a href="familytree.html">Family Tree</a>
+    </nav>
+  </header>
 
-    <main>
-        <h2>Our Memories by Year</h2>
-        <ul class="photo-list">
-            <li>
-                <a href="08.31.25.html" class="highlight-link">
-                    <img src="images/083125/group.jpg" alt="Group Photo" class="link-thumbnail">
-                    2025 – Germantown MetroPark
-                </a>
-            </li>
-            <!-- Add more years below as needed -->
-        </ul>
-        <hr>
-    </main>
+  <main>
+    <h2>Our Memories by Year</h2>
+    <ul class="photo-list">
+      <li>
+        <a href="08.31.25.html" class="highlight-link">
+          <img src="images/083125/group.jpg" alt="Group Photo" class="link-thumbnail">
+          2025 – Germantown MetroPark
+        </a>
+      </li>
+    </ul>
 
-    <footer>
-        <p>© 2025 Our Family Reunion</p>
-        <small>Last updated: September 1, 2025</small>
-    </footer>
+    <h2>Legacy Gallery (Coming Soon)</h2>
+    <ul class="photo-list">
+      <li>
+        <a class="highlight-link" style="opacity: 0.6; pointer-events: none;">
+          <img src="lantis.ico" alt="Coming Soon" class="link-thumbnail">
+          Older Family Photos – In Progress
+        </a>
+      </li>
+    </ul>
+
+    <div class="call-to-action">
+      <p>Have family photos to share? Email them to 
+      <a href="mailto:LantisCriglerReunion@gmail.com">LantisCriglerReunion@gmail.com</a> and include names, dates, and any fun details!</p>
+    </div>
+
+    <hr style="margin: 40px auto; border: none; border-top: 2px solid #ccc; width: 80%;">
+  </main>
+
+  <footer>
+    <p>© 2025 Our Family Reunion</p>
+    <small>Last updated: October 06, 2025</small>
+  </footer>
 </body>
 </html>
