@@ -1,4 +1,4 @@
-const svg = d3.select("svg");
+const svg = d3.select("#tree-canvas");
 const width = window.innerWidth;
 const height = window.innerHeight;
 svg.attr("width", width).attr("height", height);
@@ -196,8 +196,4 @@ function renderTree(data) {
         .attr("x2", parentX).attr("y2", midY)
         .attr("stroke", "#000")
         .attr("stroke-width", 1.2)
-        .attr("stroke-linecap", "round");
-
-      d.children.forEach(cid => {
-        const childPos = positions.get(cid);
-        if (!childPos) return;
+        .attr("stroke-linecap
