@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- Author: Tara Brown -->
+<!-- Doc name: messages.html -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send a Message</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="lantis.ico" type="image/x-icon">
+  <style>
+    main {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+      background: rgba(180, 240, 200, 0.85); /* Soft glass green */
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea, button {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    button {
+      background: #1589FF;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0a5bbf;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="photos.html">Photo Gallery</a>
+      <a href="posts.html">Family Messages</a>
+      <a href="messages.html">Contact Us</a>
+      <a href="familytree.html">Family Tree</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>We’d love to hear from you!</h2>
+   <p>Use this form to send us a private message. If you'd like to share photos, please email them to <a href="mailto:LantisCriglerReunion@gmail.com">LantisCriglerReunion@gmail.com</a> and include as many details as you can about each image.</p>
+
+    <!-- ✅ Formspree form -->
+    <form action="https://formspree.io/f/mblzaynk" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <input type="hidden" name="_subject" value="New Reunion Message">
+      <input type="hidden" name="_next" value="thankyou.html">
+
+      <button type="submit">Send</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 Our Family Reunion</p>
+    <small>Last updated: October 06, 2025</small>
+  </footer>
+</body>
+</html>
