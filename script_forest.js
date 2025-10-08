@@ -190,13 +190,28 @@ function renderTree(data) {
             linesLayer.append("line")
                 .attr("class", "connector")
                 .attr("data-from", d.id)
-                .attr("data-to", cid)
-                .attr("x1", parentX).attr("y1", midY)
-                .attr("x2", childPos.x + nodeWidth / 2).attr("y2", childPos.y)
+                .attr("data-to", hasSpouse ? d.spouse : d.id)
+                .attr("data-type", "parent-midline")
+                .attr("x1", parentX).attr("y1", parentY)
+                .attr("x2", parentX).attr("y2", midY)
                 .attr("stroke", "#000")
                 .attr("stroke-width", 1.2)
                 .attr("stroke-linecap", "round");
-        });
-}
+
+            d.children.forEach(cid => {
+                const childPos = positions.get(cid);
+                if (!childPos) return;
+
+                linesLayer.append("line")
+                    .attr("class", "connector")
+                    .attr("data-from", d.id)
+                    .attr("data-to", cid)
+                    .attr("x1", parentX).attr("y1", midY)
+                    .attr("x2", childPos.x + nodeWidth / 2).attr("y2", childPos.y)
+                    .attr("stroke", "#000")
+                    .attr("stroke-width", 1.2)
+                    .attr("stroke-linecap", "round");
+            });
+        }
     });
 }
