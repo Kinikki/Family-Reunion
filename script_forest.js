@@ -12,13 +12,35 @@ const zoom = d3.zoom().on("zoom", (event) => {
 });
 svg.call(zoom);
 
+// ✅ Responsive centering function
+function centerTreeView() {
+    const bounds = zoomLayer.node().getBBox();
+    if (!bounds.width || !bounds.height) {
+        svg.transition().duration(500).call(
+            zoom.transform,
+            d3.zoomIdentity.translate(width / 2 - 300, height / 4).scale(0.75)
+        );
+        return;
+    }
+    const offsetX = (width - bounds.width) / 2 - bounds.x;
+    const offsetY = (height - bounds.height) / 2 - bounds.y;
+    svg.transition().duration(500).call(
+        zoom.transform,
+        d3.zoomIdentity.translate(offsetX, offsetY).scale(1)
+    );
+}
+
+// ✅ Reset button re-centers the tree
 d3.select("#reset-btn")?.on("click", () => {
-    svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+    centerTreeView();
 });
 
 fetch("people.json")
     .then((res) => res.json())
-    .then((data) => renderTree(data))
+    .then((data) => {
+        renderTree(data);
+        centerTreeView(); // ✅ Auto-center after load
+    })
     .catch(err => console.error("Failed to load people.json:", err));
 
 function renderTree(data) {
@@ -178,7 +200,6 @@ function renderTree(data) {
                     .attr("stroke-linecap", "round");
             }
         }
-
         if (hasChildren && (!hasSpouse || d.id < d.spouse)) {
             const spousePos = hasSpouse ? positions.get(d.spouse) : null;
             const parentX = (hasSpouse && spousePos)
