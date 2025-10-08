@@ -1,224 +1,261 @@
 /* General body styles */
 body {
-	position: relative;
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	background-color: #fefcf8; /* light cream fallback */
-	color: black; /* all text black */
-	text-align: center;
-	z-index: 1;
+  position: relative;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fefcf8; /* light cream fallback */
+  color: black; /* all text black */
+  text-align: center;
+  z-index: 1;
 }
 
-	/* Full-page background with 50% opacity */
-	body::before {
-		content: "";
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: url("images/background.jpg") center/cover no-repeat;
-		opacity: 0.5;
-		z-index: -1;
-	}
+/* Full-page background with 50% opacity */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("images/background.jpg") center/cover no-repeat;
+  opacity: 0.5;
+  z-index: -1;
+}
 
 /* Header with green glass effect and text pop */
 header {
-	background: rgba(76, 175, 80, 0.5); /* green with 50% opacity */
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	color: black; /* header text black */
-	padding: 1em 0;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-	border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  background: rgba(76, 175, 80, 0.5); /* green with 50% opacity */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: black; /* header text black */
+  padding: 1em 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
 }
 
-	header h1 {
-		font-weight: bold;
-		text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-		letter-spacing: 1.2px;
-	}
+header h1 {
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  letter-spacing: 1.2px;
+}
 
 /* Header navigation */
 nav a {
-	color: black;
-	margin: 0 12px;
-	text-decoration: none;
-	font-weight: bold;
-	padding: 6px 10px;
-	border-radius: 5px;
-	transition: background-color 0.3s ease, transform 0.2s ease;
+  color: black;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-	nav a:hover {
-		background-color: rgba(255, 255, 255, 0.2);
-		transform: scale(1.05);
-	}
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
 
 /* Main content */
 main {
-	max-width: 700px;
-	margin: 30px auto;
-	padding: 0 20px;
-	text-align: center;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 0 20px;
+  text-align: center;
 }
 
 h2 {
-	font-size: 2em;
-	margin-bottom: 10px;
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333; /* dark gray for readability */
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* subtle shadow for depth */
 }
 
 p {
-	font-size: 1.1em;
-	margin-bottom: 20px;
+  font-size: 1.1em;
+  margin-bottom: 20px;
 }
 
 /* Reunion date with glass effect */
 .reunion-date {
-	margin: 20px auto;
-	padding: 15px 25px;
-	background: rgba(255, 183, 77, 0.5); /* orange-yellow 50% opacity */
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
-	border: 3px solid #FF8F00;
-	border-radius: 12px;
-	display: inline-block;
-	font-size: 1.4em;
-	font-weight: bold;
-	color: black;
-	box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	transition: transform 0.2s ease;
+  margin: 20px auto;
+  padding: 15px 25px;
+  background: rgba(255, 183, 77, 0.5); /* orange-yellow 50% opacity */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 3px solid #FF8F00;
+  border-radius: 12px;
+  display: inline-block;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: black;
+  box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease;
 }
 
-	.reunion-date:hover {
-		transform: scale(1.05);
-	}
+.reunion-date:hover {
+  transform: scale(1.05);
+}
+
+.reunion-details p {
+  font-size: 0.9em;
+  margin: 4px 0;
+  color: #333;
+}
 
 /* Photo list styling */
 .photo-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-	.photo-list li {
-		margin: 10px 0;
-	}
+.photo-list li {
+  margin: 10px 0;
+}
 
-	.photo-list a {
-		color: black;
-		text-decoration: none;
-		font-weight: bold;
-		display: inline-block;
-		padding: 8px 12px;
-		border-radius: 6px;
-		background-color: rgba(255, 192, 203, 0.5); /* light pink 50% opacity */
-		transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
-		outline: none;
-	}
+.photo-list a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: rgba(255, 192, 203, 0.5); /* light pink 50% opacity */
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  outline: none;
+}
 
-		.photo-list a:hover {
-			background-color: rgba(255, 192, 203, 0.8); /* slightly darker pink */
-			transform: scale(1.05);
-			color: purple; /* hover text purple */
-			cursor: pointer;
-		}
+.photo-list a:hover {
+  background-color: rgba(255, 192, 203, 0.8); /* slightly darker pink */
+  transform: scale(1.05);
+  color: purple; /* hover text purple */
+  cursor: pointer;
+}
 
 /* Disqus comment section styling */
 #disqus_thread {
-	background-color: rgba(249, 249, 249, 0.9);
-	padding: 20px;
-	border-radius: 8px;
-	margin-top: 20px;
+  background-color: rgba(249, 249, 249, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
 }
 
-	#disqus_thread,
-	#disqus_thread * {
-		color: black !important;
-		font-family: Arial, sans-serif !important;
-	}
+#disqus_thread,
+#disqus_thread * {
+  color: black !important;
+  font-family: Arial, sans-serif !important;
+}
 
-		#disqus_thread a {
-			color: purple !important;
-		}
+#disqus_thread a {
+  color: purple !important;
+}
 
-		#disqus_thread .post-content {
-			font-size: 1em;
-		}
+#disqus_thread .post-content {
+  font-size: 1em;
+}
 
 /* Footer with text pop */
 footer {
-	background: rgba(76, 175, 80, 0.5);
-	color: black;
-	padding: 15px 0;
-	margin-top: 30px;
-	text-align: center;
+  background: rgba(76, 175, 80, 0.5);
+  color: black;
+  padding: 15px 0;
+  margin-top: 30px;
+  text-align: center;
 }
 
-	footer p {
-		font-weight: bold;
-		text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-		letter-spacing: 1.2px;
-	}
+footer p {
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  letter-spacing: 1.2px;
+}
 
-	footer small {
-		display: block;
-		font-size: 0.8em;
-		margin-top: 5px;
-	}
+footer small {
+  display: block;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
 
 /* Photo gallery styling */
 .photo-gallery img {
-	max-width: 250px;
-	border-radius: 8px;
-	box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-	transition: transform 0.2s ease;
+  width: 250px; /* Fixed width for all thumbnails */
+  height: 180px; /* Fixed height for uniform size */
+  object-fit: cover; /* Crops edges slightly to fit nicely */
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
-	.photo-gallery img:hover {
-		transform: scale(1.05);
-	}
+.photo-gallery img:hover {
+  transform: scale(1.05);
+}
 
 /* Standard size for cottonwood, group, becky, 08.31.25.1 */
 .standard-photo {
-	max-width: 250px;
+  max-width: 250px;
 }
 
 /* Highlight link styling */
 .highlight-link {
-	display: inline-block;
-	padding: 6px 12px;
-	background-color: rgba(255, 192, 203, 0.5);
-	color: black;
-	border-radius: 6px;
-	text-decoration: none;
-	transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: rgba(255, 192, 203, 0.5);
+  color: black;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-	.highlight-link:hover {
-		background-color: rgba(255, 105, 180, 0.7);
-		transform: scale(1.03);
-	}
-h2 {
-	font-size: 2em;
-	margin-bottom: 10px;
-	color: #333; /* dark gray for readability */
-	letter-spacing: 1px;
-	text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* subtle shadow for depth */
+.highlight-link:hover {
+  background-color: rgba(250, 100, 175, 0.5);
+  transform: scale(1.03);
 }
-.photo-gallery img {
-	width: 250px; /* Fixed width for all thumbnails */
-	height: 180px; /* Fixed height for uniform size */
-	object-fit: cover; /* Crops edges slightly to fit nicely */
-	border-radius: 8px;
-	box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-	transition: transform 0.2s ease;
-	cursor: pointer;
+.news-post {
+  margin: 15px 0;
+  padding: 12px 18px;
+  background: rgba(76, 175, 80, 0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-left: 4px solid #FF8F00;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  font-size: 1.1em;
+}
+.news-post a {
+  color: #FF6F00;
+  text-decoration: underline;
+}
+/* Family tree intro paragraph */
+.tree-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 30px auto 20px;
+  font-size: 1.1em;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 }
 
-	.photo-gallery img:hover {
-		transform: scale(1.05);
-	}
+/* Call to action block */
+.tree-callout {
+  text-align: center;
+  max-width: 700px;
+  margin: 30px auto;
+  font-size: 1.05em;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 15px 20px;
+  border-left: 4px solid #FF8F00;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.tree-callout a {
+  color: #FF6F00;
+  text-decoration: underline;
+  font-weight: bold;
+}
