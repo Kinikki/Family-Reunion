@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="google" content="notranslate">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family Tree</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <!-- ✅ Header with full navigation -->
+  <header>
+    <h1>Family Tree</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="photos.html">Photo Gallery</a>
+      <a href="posts.html">Family Messages</a>
+      <a href="messages.html">Contact Us</a>
+      <a href="familytree.html">Family Tree</a>
+    </nav>
+  </header>
+
+  <!-- ✅ Intro paragraph -->
+  <main>
+    <p style="text-align: center; max-width: 700px; margin: 20px auto; font-size: 1.1em;">
+      This family tree is a work in progress. We're still adding names, dates, and connections — so please be patient as it grows. Thank you for helping us preserve our legacy!
+    </p>
+  </main>
+
+  <!-- ✅ Tree container -->
+  <div id="tree-container">
+    <svg id="tree-canvas" width="100%" height="100%">
+      <defs>
+        <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.07)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect id="grid-rect" x="-10000" y="-10000" width="20000" height="20000" fill="url(#grid-pattern)"></rect>
+      <g id="zoom-layer">
+        <g id="lines-layer"></g>
+        <g id="cards-layer"></g>
+      </g>
+    </svg>
+    <button id="reset-btn" class="reset-button" title="Reset View">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1 4 1 10 7 10" />
+        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- ✅ Call to action -->
+  <div style="text-align: center; max-width: 700px; margin: 30px auto; font-size: 1.05em;">
+    <p>See someone missing or need a correction? Email us at 
+    <a href="mailto:LantisCriglerReunion@gmail.com">LantisCriglerReunion@gmail.com</a> with names, dates, and any helpful details!</p>
+  </div>
+
+  <!-- ✅ Tree logic -->
+  <script src="script-forest.js"></script>
+
+  <footer>
+    <p>© 2025 Our Family Reunion</p>
+    <small>Last updated: October 06, 2025</small>
+  </footer>
+</body>
+</html>
