@@ -1,4 +1,3 @@
-// family-tree.js
 const svg = d3.select("svg");
 const width = window.innerWidth;
 const height = window.innerHeight;
@@ -27,7 +26,6 @@ function renderTree(data) {
   const allIds = data.map(d => d.id);
   const childIds = new Set(data.flatMap(d => d.children || []));
 
-  // Candidate roots
   const candidateRoots = data.map(d => d.id).filter(id => !childIds.has(id));
   const rootSet = new Set();
   candidateRoots.forEach(id => {
@@ -83,11 +81,9 @@ function renderTree(data) {
     startX = (isFinite(maxRow) ? maxRow : startX) + paddingX * 2;
   });
 
-  // Clear existing
   cardsLayer.selectAll("*").remove();
   linesLayer.selectAll("*").remove();
 
-  // Build parent/child maps for lineage lookup
   const parentsMap = new Map();
   const childrenMap = new Map();
   data.forEach(person => {
@@ -117,9 +113,8 @@ function renderTree(data) {
     return visited;
   }
 
-  // Draw cards
   positions.forEach((pos, id) => {
-    const node = nodeMap.get(id) || { name: id, photo: "Photos/Default.jpg" };
+    const node = nodeMap.get(id) || { name: id, photo: null };
     const group = cardsLayer.append("g")
       .attr("class", "person-card")
       .attr("data-id", id);
@@ -130,11 +125,13 @@ function renderTree(data) {
       .attr("fill", "#fff").attr("stroke", "#444")
       .attr("rx", 8).attr("ry", 8);
 
-    group.append("image")
-      .attr("href", node.photo || "Photos/Default.jpg")
-      .attr("x", pos.x + (nodeWidth - 80) / 2).attr("y", pos.y + 15)
-      .attr("width", 80).attr("height", 80)
-      .attr("preserveAspectRatio", "xMidYMid slice");
+    if (node.photo) {
+      group.append("image")
+        .attr("href", node.photo)
+        .attr("x", pos.x + (nodeWidth - 80) / 2).attr("y", pos.y + 15)
+        .attr("width", 80).attr("height", 80)
+        .attr("preserveAspectRatio", "xMidYMid slice");
+    }
 
     group.append("text")
       .attr("x", pos.x + nodeWidth / 2).attr("y", pos.y + 115)
@@ -147,7 +144,6 @@ function renderTree(data) {
       .attr("text-anchor", "middle").attr("font-size", "12px")
       .attr("fill", "#555").text(life);
 
-    // Hover highlight lineage
     group.on("mouseenter", function() {
       const lineage = getLineageIds(id);
       d3.selectAll(".connector").classed("hovered", function() {
@@ -160,7 +156,6 @@ function renderTree(data) {
     });
   });
 
-  // Draw connectors
   data.forEach(d => {
     const from = positions.get(d.id);
     if (!from) return;
@@ -168,7 +163,6 @@ function renderTree(data) {
     const hasSpouse = d.spouse && positions.has(d.spouse);
     const hasChildren = d.children && d.children.length > 0;
 
-    // Spouse line
     if (hasSpouse && d.id < d.spouse) {
       const to = positions.get(d.spouse);
       if (to) {
@@ -185,7 +179,6 @@ function renderTree(data) {
       }
     }
 
-    // Children connectors
     if (hasChildren && (!hasSpouse || d.id < d.spouse)) {
       const spousePos = hasSpouse ? positions.get(d.spouse) : null;
       const parentX = (hasSpouse && spousePos)
@@ -197,8 +190,8 @@ function renderTree(data) {
       linesLayer.append("line")
         .attr("class", "connector")
         .attr("data-from", d.id)
-        .attr("data-to", hasSpouse ? d.spouse : d.id) 
-        .attr("data-type", "parent-midline") // generic mid-line
+        .attr("data-to", hasSpouse ? d.spouse : d.id)
+        .attr("data-type", "parent-midline")
         .attr("x1", parentX).attr("y1", parentY)
         .attr("x2", parentX).attr("y2", midY)
         .attr("stroke", "#000")
@@ -208,24 +201,3 @@ function renderTree(data) {
       d.children.forEach(cid => {
         const childPos = positions.get(cid);
         if (!childPos) return;
-
-        const childX = childPos.x + nodeWidth / 2;
-        const childY = childPos.y;
-        const curve = 12;
-        const hx = childX < parentX ? childX + curve : childX - curve;
-
-        const path = `M${parentX},${midY} L${hx},${midY} Q${childX},${midY} ${childX},${midY + curve} L${childX},${childY}`;
-        linesLayer.append("path")
-          .attr("class", "connector")
-          .attr("data-from", d.id)
-          .attr("data-to", cid)
-          .attr("d", path)
-          .attr("stroke", "#000")
-          .attr("fill", "none")
-          .attr("stroke-width", 1.2)
-          .attr("stroke-linejoin", "round")
-          .attr("stroke-linecap", "round");
-      });
-    }
-  });
-}
