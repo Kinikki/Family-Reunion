@@ -35,11 +35,12 @@ d3.select("#reset-btn")?.on("click", () => {
     centerTreeView();
 });
 
+// ✅ Load data and render tree
 fetch("people.json")
     .then((res) => res.json())
     .then((data) => {
         renderTree(data);
-        centerTreeView(); // ✅ Auto-center after load
+        setTimeout(centerTreeView, 100); // delay to ensure layout is complete
     })
     .catch(err => console.error("Failed to load people.json:", err));
 
@@ -105,7 +106,6 @@ function renderTree(data) {
 
     cardsLayer.selectAll("*").remove();
     linesLayer.selectAll("*").remove();
-
     const parentsMap = new Map();
     const childrenMap = new Map();
     data.forEach(person => {
@@ -200,6 +200,7 @@ function renderTree(data) {
                     .attr("stroke-linecap", "round");
             }
         }
+
         if (hasChildren && (!hasSpouse || d.id < d.spouse)) {
             const spousePos = hasSpouse ? positions.get(d.spouse) : null;
             const parentX = (hasSpouse && spousePos)
