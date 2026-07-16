@@ -1,6 +1,14 @@
-/* ================================
+/* =================================
    GENERAL PAGE STYLES
-================================ */
+================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   position: relative;
@@ -8,9 +16,10 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #fff8ef;
+  overflow-x: hidden;
+  background-color: #f8f1e7;
   color: #2f2925;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
@@ -18,45 +27,48 @@ body {
 body::before {
   content: "";
   position: fixed;
-  z-index: -2;
+  z-index: -1;
   inset: 0;
   width: 100%;
   height: 100%;
   background: url("images/background.jpg") center / cover no-repeat;
   opacity: 0.55;
+  pointer-events: none;
 }
 
-/* ================================
+
+/* =================================
    HEADER
-================================ */
+================================= */
 
 header {
   padding: 22px 15px 18px;
   background: linear-gradient(
     135deg,
-    rgba(122, 171, 128, 0.94),
-    rgba(166, 202, 155, 0.92)
+    rgba(102, 153, 111, 0.96),
+    rgba(152, 192, 143, 0.95)
   );
-  color: #203523;
-  border-bottom: 4px solid rgba(255, 183, 126, 0.9);
-  box-shadow: 0 5px 18px rgba(62, 79, 55, 0.25);
+  color: #18351f;
+  border-bottom: 4px solid #e7a66d;
+  box-shadow: 0 5px 18px rgba(44, 65, 42, 0.28);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 header h1 {
   margin: 0 15px 18px;
-  color: #203523;
-  font-size: 2.35em;
-  font-weight: 800;
+  color: #18351f;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 2.5em;
+  font-weight: normal;
   letter-spacing: 1px;
-  text-shadow: 1px 2px 2px rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 2px 2px rgba(255, 255, 255, 0.55);
 }
 
 
-/* ================================
+/* =================================
    NAVIGATION
-================================ */
+================================= */
 
 nav {
   display: flex;
@@ -67,14 +79,14 @@ nav {
 }
 
 nav a {
-  padding: 9px 14px;
-  background: rgba(255, 250, 241, 0.5);
-  color: #283d2b;
-  font-weight: bold;
+  padding: 9px 15px;
+  background: rgba(255, 250, 241, 0.54);
+  color: #263d29;
+  font-weight: 800;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(50, 70, 47, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 22px;
+  box-shadow: 0 2px 6px rgba(50, 70, 47, 0.14);
   transition:
     background-color 0.25s ease,
     color 0.25s ease,
@@ -84,57 +96,138 @@ nav a {
 
 nav a:hover {
   background: #fff8ef;
-  color: #a0444f;
+  color: #944552;
   transform: translateY(-2px);
-  box-shadow: 0 5px 10px rgba(50, 70, 47, 0.2);
+  box-shadow: 0 5px 11px rgba(50, 70, 47, 0.22);
+}
+
+/* Current page navigation link */
+nav a.active {
+  background: #fff8ef;
+  color: #944552;
+  border-color: rgba(148, 69, 82, 0.25);
+  box-shadow: 0 4px 10px rgba(50, 70, 47, 0.2);
 }
 
 
-/* ================================
+/* =================================
    MAIN PAGE CONTENT
-================================ */
+================================= */
 
 main {
   max-width: 780px;
   margin: 34px auto;
   padding: 25px;
+  background: transparent;
   text-align: center;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
-/* ================================
+/* =================================
    HEADINGS AND PARAGRAPHS
-================================ */
+================================= */
 
 h2 {
   margin-top: 14px;
   margin-bottom: 18px;
-  color: #304c35;
-  font-size: 2em;
-  letter-spacing: 0.8px;
+  color: #294b31;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 2.15em;
+  font-weight: normal;
+  letter-spacing: 0.6px;
+  text-shadow:
+    1px 1px 2px rgba(255, 255, 255, 0.95),
+    -1px -1px 2px rgba(255, 255, 255, 0.85);
+}
+
+h3 {
+  color: #78424a;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.45em;
+  font-weight: normal;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #292522;
+  font-size: 1.1em;
+  line-height: 1.65;
   text-shadow:
     1px 1px 2px rgba(255, 255, 255, 0.95),
     -1px -1px 2px rgba(255, 255, 255, 0.8);
 }
 
-p {
-  margin-bottom: 20px;
-  color: #302b27;
-  font-size: 1.1em;
-  line-height: 1.65;
-  text-shadow:
-    1px 1px 2px rgba(255, 255, 255, 0.92),
-    -1px -1px 2px rgba(255, 255, 255, 0.72);
-}
-
 a {
-  color: #a54651;
+  color: #984754;
+}
+
+/* Small decorative text above headings */
+.eyebrow {
+  margin: 0 0 5px;
+  color: #8d3f4c;
+  font-size: 0.85em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow:
+    1px 1px 2px rgba(255, 255, 255, 0.95),
+    -1px -1px 2px rgba(255, 255, 255, 0.8);
 }
 
 
-/* ================================
+/* =================================
+   BUTTON LINKS
+================================= */
+
+.button-link {
+  display: inline-block;
+  margin: 8px;
+  padding: 11px 21px;
+  background: linear-gradient(135deg, #c96c78, #9e4755);
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-radius: 25px;
+  box-shadow: 0 4px 11px rgba(97, 46, 54, 0.28);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.25s ease;
+}
+
+.button-link:hover {
+  background: linear-gradient(135deg, #b95c69, #873b48);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 15px rgba(97, 46, 54, 0.34);
+}
+
+.button-link:active {
+  transform: translateY(0);
+}
+
+
+/* =================================
    FEATURED HOMEPAGE PHOTO
-================================ */
+================================= */
 
 .featured-photo {
   margin: 24px auto;
@@ -147,17 +240,27 @@ a {
   max-width: 520px;
   height: auto;
   margin: 0 auto;
-  border: 6px solid rgba(255, 248, 239, 0.9);
+  border: 6px solid rgba(255, 248, 239, 0.94);
   border-radius: 16px;
   box-shadow:
-    0 8px 22px rgba(67, 75, 56, 0.28),
-    0 0 0 2px rgba(223, 150, 126, 0.45);
+    0 9px 24px rgba(55, 67, 47, 0.3),
+    0 0 0 2px rgba(213, 132, 111, 0.48);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.featured-photo img:hover {
+  transform: scale(1.015);
+  box-shadow:
+    0 12px 28px rgba(55, 67, 47, 0.34),
+    0 0 0 2px rgba(213, 132, 111, 0.58);
 }
 
 
-/* ================================
+/* =================================
    REUNION MESSAGE AND DATE BOXES
-================================ */
+================================= */
 
 .reunion-message,
 .reunion-date {
@@ -166,30 +269,30 @@ a {
   padding: 22px 30px;
   background: linear-gradient(
     135deg,
-    rgba(255, 223, 185, 0.96),
-    rgba(255, 238, 207, 0.95)
+    rgba(255, 216, 174, 0.97),
+    rgba(255, 236, 202, 0.96)
   );
-  color: #513728;
+  color: #4b3224;
   text-align: center;
-  border: 3px solid #e69a62;
+  border: 3px solid #df8f55;
   border-radius: 16px;
   box-shadow:
-    0 7px 18px rgba(112, 76, 51, 0.19),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    0 7px 18px rgba(112, 76, 51, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
 .reunion-message {
   font-size: 1.15em;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1.6;
 }
 
 .reunion-date {
   display: inline-block;
   font-size: 1.35em;
-  font-weight: bold;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: transform 0.2s ease;
@@ -202,8 +305,13 @@ a {
 .reunion-message p,
 .reunion-date p,
 .reunion-details p {
-  color: #513728;
+  color: #4b3224;
   text-shadow: none;
+}
+
+.reunion-message p:last-child,
+.reunion-date p:last-child {
+  margin-bottom: 0;
 }
 
 .reunion-details p {
@@ -213,15 +321,15 @@ a {
 
 .reunion-message a,
 .reunion-date a {
-  color: #a13e45;
-  font-weight: bold;
+  color: #953e49;
+  font-weight: 800;
   text-decoration: underline;
 }
 
 
-/* ================================
+/* =================================
    PHOTO YEAR LIST
-================================ */
+================================= */
 
 .photo-list {
   margin: 0;
@@ -244,17 +352,17 @@ a {
   padding: 10px 16px;
   background: linear-gradient(
     135deg,
-    rgba(245, 198, 207, 0.96),
-    rgba(255, 220, 218, 0.95)
+    rgba(244, 190, 202, 0.97),
+    rgba(255, 217, 213, 0.96)
   );
-  color: #5b303a;
-  font-weight: bold;
+  color: #563039;
+  font-weight: 800;
   text-decoration: none;
-  border: 2px solid rgba(197, 103, 120, 0.45);
+  border: 2px solid rgba(190, 88, 109, 0.48);
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(105, 68, 74, 0.14);
+  box-shadow: 0 4px 10px rgba(105, 68, 74, 0.17);
   transition:
-    background-color 0.25s ease,
+    background 0.25s ease,
     transform 0.2s ease,
     box-shadow 0.25s ease,
     color 0.25s ease;
@@ -264,17 +372,16 @@ a {
 .highlight-link:hover {
   background: linear-gradient(
     135deg,
-    rgba(234, 164, 181, 0.98),
-    rgba(250, 200, 196, 0.98)
+    rgba(230, 149, 170, 0.98),
+    rgba(248, 190, 188, 0.98)
   );
-  color: #67243a;
+  color: #5d2032;
   cursor: pointer;
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 7px 15px rgba(105, 68, 74, 0.2);
+  box-shadow: 0 7px 15px rgba(105, 68, 74, 0.23);
 }
 
-
-/* Small thumbnails beside each reunion year */
+/* Small thumbnails beside reunion years */
 .link-thumbnail {
   display: block;
   flex-shrink: 0;
@@ -285,11 +392,10 @@ a {
   min-height: 50px;
   max-height: 50px;
   object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.94);
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(82, 52, 57, 0.2);
+  box-shadow: 0 2px 6px rgba(82, 52, 57, 0.22);
 }
-
 
 /* Disabled photo-gallery link */
 .unavailable-link {
@@ -299,15 +405,15 @@ a {
 }
 
 
-/* ================================
+/* =================================
    PHOTO GALLERY
-================================ */
+================================= */
 
 .photo-gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .photo-gallery a {
@@ -320,11 +426,11 @@ a {
   width: 250px;
   height: 180px;
   object-fit: cover;
-  border: 4px solid rgba(255, 248, 239, 0.92);
+  border: 4px solid rgba(255, 248, 239, 0.94);
   border-radius: 12px;
   box-shadow:
-    0 5px 14px rgba(53, 65, 45, 0.22),
-    0 0 0 1px rgba(172, 117, 101, 0.3);
+    0 5px 14px rgba(53, 65, 45, 0.24),
+    0 0 0 1px rgba(172, 117, 101, 0.32);
   cursor: pointer;
   transition:
     transform 0.2s ease,
@@ -334,8 +440,8 @@ a {
 .photo-gallery img:hover {
   transform: translateY(-3px) scale(1.035);
   box-shadow:
-    0 9px 20px rgba(53, 65, 45, 0.28),
-    0 0 0 2px rgba(212, 126, 112, 0.48);
+    0 9px 20px rgba(53, 65, 45, 0.3),
+    0 0 0 2px rgba(212, 126, 112, 0.52);
 }
 
 .standard-photo {
@@ -345,129 +451,151 @@ a {
 }
 
 
-/* ================================
+/* =================================
    NEWS POSTS
-================================ */
+================================= */
 
 .news-post {
   margin: 18px 0;
   padding: 18px 22px;
   background: linear-gradient(
     135deg,
-    rgba(221, 239, 218, 0.96),
-    rgba(239, 247, 225, 0.95)
+    rgba(211, 235, 208, 0.97),
+    rgba(237, 246, 222, 0.96)
   );
-  color: #2d432f;
+  color: #29422e;
   font-size: 1.05em;
   text-align: left;
-  border-left: 6px solid #e69a62;
+  border-left: 6px solid #df8f55;
   border-radius: 12px;
-  box-shadow: 0 5px 14px rgba(58, 83, 58, 0.15);
+  box-shadow: 0 5px 14px rgba(58, 83, 58, 0.17);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
 
+.news-post h3 {
+  margin-top: 0;
+}
+
 .news-post p {
-  color: #2d432f;
+  color: #29422e;
   text-shadow: none;
 }
 
+.news-post p:last-child {
+  margin-bottom: 0;
+}
+
 .news-post a {
-  color: #9b3f49;
-  font-weight: bold;
+  color: #8f3946;
+  font-weight: 800;
   text-decoration: underline;
 }
 
 
-/* ================================
+/* =================================
    FAMILY TREE SECTIONS
-================================ */
+================================= */
 
 .tree-intro {
   max-width: 700px;
   margin: 30px auto 20px;
   padding: 18px 22px;
-  background: rgba(255, 242, 222, 0.95);
-  color: #45372f;
+  background: rgba(255, 236, 207, 0.96);
+  color: #40332c;
   font-size: 1.1em;
   text-align: center;
-  border: 2px solid rgba(229, 170, 115, 0.5);
+  border: 2px solid rgba(220, 151, 92, 0.58);
   border-radius: 14px;
-  box-shadow: 0 5px 14px rgba(96, 72, 54, 0.14);
+  box-shadow: 0 5px 14px rgba(96, 72, 54, 0.17);
+}
+
+.tree-intro p {
+  color: #40332c;
+  text-shadow: none;
 }
 
 .tree-callout {
   max-width: 700px;
   margin: 30px auto;
   padding: 18px 22px;
-  background: rgba(225, 240, 220, 0.96);
-  color: #304533;
+  background: rgba(215, 237, 211, 0.97);
+  color: #29432e;
   font-size: 1.05em;
   text-align: center;
-  border-left: 6px solid #d77d70;
+  border-left: 6px solid #cc6f66;
   border-radius: 14px;
-  box-shadow: 0 5px 14px rgba(58, 83, 58, 0.14);
+  box-shadow: 0 5px 14px rgba(58, 83, 58, 0.17);
+}
+
+.tree-callout p {
+  color: #29432e;
+  text-shadow: none;
 }
 
 .tree-callout a {
-  color: #99404a;
-  font-weight: bold;
+  color: #8e3946;
+  font-weight: 800;
   text-decoration: underline;
 }
 
 
-/* ================================
+/* =================================
    CALL TO ACTION
-================================ */
+================================= */
 
 .call-to-action {
   margin-top: 30px;
   padding: 18px 22px;
   background: linear-gradient(
     135deg,
-    rgba(255, 236, 207, 0.95),
-    rgba(247, 211, 208, 0.94)
+    rgba(255, 228, 191, 0.97),
+    rgba(244, 199, 196, 0.96)
   );
-  color: #553a37;
+  color: #4d3533;
   text-align: center;
-  border: 2px solid rgba(213, 123, 110, 0.45);
+  border: 2px solid rgba(200, 99, 88, 0.48);
   border-radius: 14px;
-  box-shadow: 0 5px 14px rgba(102, 72, 69, 0.14);
+  box-shadow: 0 5px 14px rgba(102, 72, 69, 0.17);
 }
 
 .call-to-action p {
-  color: #553a37;
+  color: #4d3533;
   text-shadow: none;
 }
 
-.call-to-action a {
-  color: #983d4a;
-  font-weight: bold;
+.call-to-action p:last-child {
+  margin-bottom: 0;
+}
+
+.call-to-action a:not(.button-link) {
+  color: #8e3946;
+  font-weight: 800;
   text-decoration: underline;
 }
 
 
-/* ================================
+/* =================================
    DISQUS COMMENTS
-================================ */
+================================= */
 
 #disqus_thread {
   margin-top: 20px;
   padding: 22px;
-  background-color: rgba(255, 250, 243, 0.96);
-  border: 2px solid rgba(136, 170, 123, 0.4);
+  background-color: rgba(255, 248, 239, 0.97);
+  border: 2px solid rgba(112, 157, 105, 0.48);
   border-radius: 14px;
-  box-shadow: 0 5px 14px rgba(58, 83, 58, 0.13);
+  box-shadow: 0 5px 14px rgba(58, 83, 58, 0.15);
 }
 
 #disqus_thread,
 #disqus_thread * {
   color: #272321 !important;
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family: "Nunito", Arial, Helvetica, sans-serif !important;
 }
 
 #disqus_thread a {
-  color: #9b3f49 !important;
+  color: #8e3946 !important;
 }
 
 #disqus_thread .post-content {
@@ -475,55 +603,66 @@ a {
 }
 
 
-/* ================================
+/* =================================
    HORIZONTAL LINES
-================================ */
+================================= */
 
 hr {
   width: 80%;
   margin: 40px auto;
   border: none;
-  border-top: 2px solid rgba(144, 111, 92, 0.4);
+  border-top: 2px solid rgba(122, 84, 67, 0.42);
 }
 
 
-/* ================================
+/* =================================
    FOOTER
-================================ */
+================================= */
 
 footer {
   margin-top: 35px;
-  padding: 18px 15px;
+  padding: 20px 15px;
   background: linear-gradient(
     135deg,
-    rgba(122, 171, 128, 0.94),
-    rgba(166, 202, 155, 0.92)
+    rgba(102, 153, 111, 0.96),
+    rgba(152, 192, 143, 0.95)
   );
-  color: #203523;
+  color: #18351f;
   text-align: center;
-  border-top: 4px solid rgba(255, 183, 126, 0.9);
-  box-shadow: 0 -4px 14px rgba(62, 79, 55, 0.15);
+  border-top: 4px solid #e7a66d;
+  box-shadow: 0 -4px 14px rgba(44, 65, 42, 0.18);
 }
 
 footer p {
   margin: 0;
-  color: #203523;
-  font-weight: bold;
+  color: #18351f;
+  font-weight: 800;
   letter-spacing: 1px;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.55);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.58);
 }
 
 footer small {
   display: block;
   margin-top: 6px;
-  color: #2d4330;
+  color: #243d29;
   font-size: 0.82em;
 }
 
 
-/* ================================
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #7c3440;
+  outline-offset: 3px;
+}
+
+
+/* =================================
    MOBILE ADJUSTMENTS
-================================ */
+================================= */
 
 @media (max-width: 600px) {
   header {
@@ -531,7 +670,7 @@ footer small {
   }
 
   header h1 {
-    font-size: 1.75em;
+    font-size: 1.85em;
   }
 
   nav {
@@ -549,11 +688,20 @@ footer small {
   }
 
   h2 {
-    font-size: 1.55em;
+    font-size: 1.65em;
+  }
+
+  h3 {
+    font-size: 1.3em;
   }
 
   p {
     font-size: 1em;
+  }
+
+  .eyebrow {
+    font-size: 0.76em;
+    letter-spacing: 1.5px;
   }
 
   .reunion-message,
@@ -564,11 +712,12 @@ footer small {
   .photo-list a,
   .highlight-link {
     width: auto;
-    max-width: 90%;
+    max-width: 92%;
     padding: 9px 12px;
     text-align: left;
   }
 
+  /* Keep year thumbnails small */
   .link-thumbnail {
     width: 50px !important;
     min-width: 50px;
@@ -582,6 +731,7 @@ footer small {
     gap: 12px;
   }
 
+  /* Only full gallery images grow on mobile */
   .photo-gallery img,
   .standard-photo {
     width: 100%;
@@ -598,5 +748,28 @@ footer small {
   .tree-intro,
   .tree-callout {
     padding: 16px;
+  }
+
+  .button-link {
+    display: block;
+    width: fit-content;
+    max-width: 90%;
+    margin: 10px auto;
+  }
+}
+
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
