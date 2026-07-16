@@ -404,4 +404,10 @@ footer small {
   .news-post {
     text-align: center;
   }
+  /* Disabled photo-gallery link */
+.unavailable-link {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: default;
+}
 }
