@@ -23,26 +23,8 @@ body::before {
   width: 100%;
   height: 100%;
   background: url("images/background.jpg") center / cover no-repeat;
-  opacity: 0.38;
+  opacity: 0.55;
 }
-
-/* Soft warm overlay over the background */
-body::after {
-  content: "";
-  position: fixed;
-  z-index: -1;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 248, 239, 0.35),
-    rgba(255, 226, 207, 0.2),
-    rgba(221, 239, 218, 0.28)
-  );
-  pointer-events: none;
-}
-
 
 /* ================================
    HEADER
