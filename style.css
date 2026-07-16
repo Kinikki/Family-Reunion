@@ -1,112 +1,166 @@
-/* General body styles */
+/* General page styles */
 body {
   position: relative;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fefcf8; /* light cream fallback */
-  color: black; /* all text black */
+  background-color: #fefcf8;
+  color: #222;
   text-align: center;
   z-index: 1;
 }
 
-/* Full-page background with 50% opacity */
+/* Full-page background image */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background: url("images/background.jpg") center/cover no-repeat;
-  opacity: 0.5;
+  opacity: 0.45;
   z-index: -1;
 }
 
-/* Header with green glass effect and text pop */
+/* Header */
 header {
-  background: rgba(76, 175, 80, 0.5); /* green with 50% opacity */
+  background: rgba(144, 200, 130, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: black; /* header text black */
+  color: #111;
   padding: 1em 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 header h1 {
+  margin: 0 15px 15px;
   font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   letter-spacing: 1.2px;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
 }
 
-/* Header navigation */
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 10px;
+}
+
 nav a {
-  color: black;
-  margin: 0 12px;
+  color: #111;
   text-decoration: none;
   font-weight: bold;
-  padding: 6px 10px;
-  border-radius: 5px;
+  padding: 8px 12px;
+  border-radius: 6px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.65);
   transform: scale(1.05);
 }
 
-/* Main content */
+/* Main page content */
 main {
-  max-width: 700px;
+  max-width: 750px;
   margin: 30px auto;
-  padding: 0 20px;
+  padding: 25px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 15px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
+/* Headings and paragraphs */
 h2 {
   font-size: 2em;
-  margin-bottom: 10px;
-  color: #333; /* dark gray for readability */
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: #222;
   letter-spacing: 1px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* subtle shadow for depth */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 p {
   font-size: 1.1em;
+  line-height: 1.6;
   margin-bottom: 20px;
+  color: #222;
 }
 
-/* Reunion date with glass effect */
+/* Featured homepage photo */
+.featured-photo {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.featured-photo img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Current reunion message */
+.reunion-message,
 .reunion-date {
   margin: 20px auto;
-  padding: 15px 25px;
-  background: rgba(255, 183, 77, 0.5); /* orange-yellow 50% opacity */
+  padding: 20px 30px;
+  max-width: 650px;
+  background: rgba(255, 220, 160, 0.92);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 3px solid #FF8F00;
+  border: 3px solid #ff8f00;
   border-radius: 12px;
+  color: #332018;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.18);
+  text-align: center;
+}
+
+.reunion-message {
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.reunion-date {
   display: inline-block;
   font-size: 1.4em;
   font-weight: bold;
-  color: black;
-  box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: transform 0.2s ease;
 }
 
 .reunion-date:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+}
+
+.reunion-message p,
+.reunion-date p,
+.reunion-details p {
+  color: #332018;
 }
 
 .reunion-details p {
   font-size: 0.9em;
   margin: 4px 0;
-  color: #333;
 }
 
-/* Photo list styling */
+.reunion-message a,
+.reunion-date a {
+  color: #b94700;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Photo year list */
 .photo-list {
   list-style: none;
   padding: 0;
@@ -117,28 +171,145 @@ p {
   margin: 10px 0;
 }
 
-.photo-list a {
-  color: black;
+.photo-list a,
+.highlight-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 8px 12px;
+  background-color: rgba(255, 205, 215, 0.92);
+  color: #222;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
-  display: inline-block;
-  padding: 8px 12px;
-  border-radius: 6px;
-  background-color: rgba(255, 192, 203, 0.5); /* light pink 50% opacity */
   transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
-  outline: none;
 }
 
-.photo-list a:hover {
-  background-color: rgba(255, 192, 203, 0.8); /* slightly darker pink */
-  transform: scale(1.05);
-  color: purple; /* hover text purple */
+.photo-list a:hover,
+.highlight-link:hover {
+  background-color: rgba(255, 170, 195, 0.95);
+  transform: scale(1.03);
+  color: #6b1b6b;
   cursor: pointer;
 }
 
-/* Disqus comment section styling */
+.link-thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* Photo gallery */
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.photo-gallery a {
+  display: inline-block;
+  line-height: 0;
+}
+
+.photo-gallery img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.22);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.photo-gallery img:hover {
+  transform: scale(1.04);
+}
+
+.standard-photo {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* News posts */
+.news-post {
+  margin: 15px 0;
+  padding: 15px 20px;
+  background: rgba(235, 255, 235, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-left: 5px solid #ff8f00;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  font-size: 1.05em;
+  text-align: left;
+}
+
+.news-post p {
+  color: #222;
+}
+
+.news-post a {
+  color: #b94700;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Family tree intro */
+.tree-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 30px auto 20px;
+  font-size: 1.1em;
+  background: rgba(255, 255, 255, 0.88);
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Family tree callout */
+.tree-callout {
+  text-align: center;
+  max-width: 700px;
+  margin: 30px auto;
+  font-size: 1.05em;
+  background: rgba(255, 255, 255, 0.88);
+  padding: 15px 20px;
+  border-left: 4px solid #ff8f00;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.tree-callout a {
+  color: #b94700;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* General call-to-action block */
+.call-to-action {
+  text-align: center;
+  margin-top: 30px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 10px;
+}
+
+.call-to-action a {
+  color: #b94700;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Disqus comments */
 #disqus_thread {
-  background-color: rgba(249, 249, 249, 0.9);
+  background-color: rgba(249, 249, 249, 0.95);
   padding: 20px;
   border-radius: 8px;
   margin-top: 20px;
@@ -146,116 +317,91 @@ p {
 
 #disqus_thread,
 #disqus_thread * {
-  color: black !important;
+  color: #111 !important;
   font-family: Arial, sans-serif !important;
 }
 
 #disqus_thread a {
-  color: purple !important;
+  color: #6b1b6b !important;
 }
 
 #disqus_thread .post-content {
   font-size: 1em;
 }
 
-/* Footer with text pop */
+/* Horizontal rules */
+hr {
+  border: none;
+  border-top: 2px solid rgba(120, 120, 120, 0.35);
+}
+
+/* Footer */
 footer {
-  background: rgba(76, 175, 80, 0.5);
-  color: black;
+  background: rgba(144, 200, 130, 0.85);
+  color: #111;
   padding: 15px 0;
   margin-top: 30px;
   text-align: center;
 }
 
 footer p {
+  margin: 0;
   font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  color: #111;
   letter-spacing: 1.2px;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
 }
 
 footer small {
   display: block;
   font-size: 0.8em;
   margin-top: 5px;
+  color: #222;
 }
 
-/* Photo gallery styling */
-.photo-gallery img {
-  width: 250px; /* Fixed width for all thumbnails */
-  height: 180px; /* Fixed height for uniform size */
-  object-fit: cover; /* Crops edges slightly to fit nicely */
-  border-radius: 8px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease;
-  cursor: pointer;
-}
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.7em;
+  }
 
-.photo-gallery img:hover {
-  transform: scale(1.05);
-}
+  nav {
+    gap: 4px;
+  }
 
-/* Standard size for cottonwood, group, becky, 08.31.25.1 */
-.standard-photo {
-  max-width: 250px;
-}
+  nav a {
+    margin: 0;
+    padding: 7px 8px;
+    font-size: 0.95em;
+  }
 
-/* Highlight link styling */
-.highlight-link {
-  display: inline-block;
-  padding: 6px 12px;
-  background-color: rgba(255, 192, 203, 0.5);
-  color: black;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
+  main {
+    margin: 20px 10px;
+    padding: 18px 12px;
+  }
 
-.highlight-link:hover {
-  background-color: rgba(250, 100, 175, 0.5);
-  transform: scale(1.03);
-}
-.news-post {
-  margin: 15px 0;
-  padding: 12px 18px;
-  background: rgba(76, 175, 80, 0.2);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-left: 4px solid #FF8F00;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  font-size: 1.1em;
-}
-.news-post a {
-  color: #FF6F00;
-  text-decoration: underline;
-}
-/* Family tree intro paragraph */
-.tree-intro {
-  text-align: center;
-  max-width: 700px;
-  margin: 30px auto 20px;
-  font-size: 1.1em;
-  background: rgba(255, 255, 255, 0.6);
-  padding: 15px 20px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-}
+  h2 {
+    font-size: 1.6em;
+  }
 
-/* Call to action block */
-.tree-callout {
-  text-align: center;
-  max-width: 700px;
-  margin: 30px auto;
-  font-size: 1.05em;
-  background: rgba(255, 255, 255, 0.6);
-  padding: 15px 20px;
-  border-left: 4px solid #FF8F00;
-  border-radius: 10px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-}
+  .reunion-message,
+  .reunion-date {
+    padding: 15px;
+  }
 
-.tree-callout a {
-  color: #FF6F00;
-  text-decoration: underline;
-  font-weight: bold;
+  .photo-list a,
+  .highlight-link {
+    width: auto;
+  }
+
+  .photo-gallery img,
+  .standard-photo {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+  }
+
+  .news-post {
+    text-align: center;
+  }
 }
