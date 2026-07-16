@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- Author: Tara Brown -->
+<!-- Doc name: 06.20.26.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06/20/2026 Family Reunion Photos</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="lantis.ico" type="image/x-icon">
+
+    <!-- Lightbox -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <h1>06/20/2026 Family Reunion</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="photos.html">Photo Gallery</a>
+        <a href="posts.html">Family Messages</a>
+        <a href="messages.html">Contact Us</a>
+        <a href="familytree.html">Family Tree</a>
+    </nav>
+</header>
+
+<main>
+
+<h2>Photo Memories from 2026</h2>
+
+<div class="photo-gallery">
+
+<a href="images/062026/Group.JPG" data-lightbox="gallery"><img src="images/062026/Group.JPG" alt="Group Photo" class="standard-photo"></a>
+
+<a href="images/062026/Group2.JPG" data-lightbox="gallery"><img src="images/062026/Group2.JPG" alt="Second Group Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo.JPG" data-lightbox="gallery"><img src="images/062026/Photo.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo1.JPG" data-lightbox="gallery"><img src="images/062026/Photo1.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo2.JPG" data-lightbox="gallery"><img src="images/062026/Photo2.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo3.JPG" data-lightbox="gallery"><img src="images/062026/Photo3.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo4.JPG" data-lightbox="gallery"><img src="images/062026/Photo4.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo5.JPG" data-lightbox="gallery"><img src="images/062026/Photo5.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo6.JPG" data-lightbox="gallery"><img src="images/062026/Photo6.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo7.JPG" data-lightbox="gallery"><img src="images/062026/Photo7.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo8.JPG" data-lightbox="gallery"><img src="images/062026/Photo8.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo9.jpeg" data-lightbox="gallery"><img src="images/062026/Photo9.jpeg" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo10.JPG" data-lightbox="gallery"><img src="images/062026/Photo10.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo11.JPG" data-lightbox="gallery"><img src="images/062026/Photo11.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo12.JPG" data-lightbox="gallery"><img src="images/062026/Photo12.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo13.JPG" data-lightbox="gallery"><img src="images/062026/Photo13.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo14.JPG" data-lightbox="gallery"><img src="images/062026/Photo14.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo15.JPG" data-lightbox="gallery"><img src="images/062026/Photo15.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo16.JPG" data-lightbox="gallery"><img src="images/062026/Photo16.JPG" alt="Family Photo" class="standard-photo"></a>
+
+<a href="images/062026/Photo17.JPG" data-lightbox="gallery"><img src="images/062026/Photo17.JPG" alt="Family Photo" class="standard-photo"></a>
+
+</div>
+
+</main>
+
+<hr style="margin: 40px 0; border: none; border-top: 2px solid #ccc;">
+
+<footer>
+    <p>© 2026 Our Family Reunion</p>
+    <small>Last updated: July 16, 2026</small>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+</body>
+</html>
