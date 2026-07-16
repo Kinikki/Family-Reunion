@@ -1,36 +1,36 @@
 /* General page styles */
 body {
   position: relative;
-  font-family: Arial, sans-serif;
+  z-index: 1;
   margin: 0;
   padding: 0;
   background-color: #fefcf8;
   color: #222;
+  font-family: Arial, sans-serif;
   text-align: center;
-  z-index: 1;
 }
 
 /* Full-page background image */
 body::before {
   content: "";
   position: fixed;
+  z-index: -1;
   inset: 0;
   width: 100%;
   height: 100%;
-  background: url("images/background.jpg") center/cover no-repeat;
+  background: url("images/background.jpg") center / cover no-repeat;
   opacity: 0.45;
-  z-index: -1;
 }
 
 /* Header */
 header {
+  padding: 1em 0;
   background: rgba(144, 200, 130, 0.85);
+  color: #111;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: #111;
-  padding: 1em 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 header h1 {
@@ -43,19 +43,21 @@ header h1 {
 /* Navigation */
 nav {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   padding: 0 10px;
 }
 
 nav a {
-  color: #111;
-  text-decoration: none;
-  font-weight: bold;
   padding: 8px 12px;
+  color: #111;
+  font-weight: bold;
+  text-decoration: none;
   border-radius: 6px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 nav a:hover {
@@ -68,29 +70,30 @@ main {
   max-width: 750px;
   margin: 30px auto;
   padding: 25px;
-  text-align: center;
   background: rgba(255, 255, 255, 0.76);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  text-align: center;
   border-radius: 15px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-/* Headings and paragraphs */
+/* Headings */
 h2 {
-  font-size: 2em;
   margin-top: 10px;
   margin-bottom: 15px;
   color: #222;
+  font-size: 2em;
   letter-spacing: 1px;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
+/* Paragraphs */
 p {
-  font-size: 1.1em;
-  line-height: 1.6;
   margin-bottom: 20px;
   color: #222;
+  font-size: 1.1em;
+  line-height: 1.6;
 }
 
 /* Featured homepage photo */
@@ -100,27 +103,27 @@ p {
 }
 
 .featured-photo img {
-  max-width: 500px;
   width: 100%;
+  max-width: 500px;
   height: auto;
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* Current reunion message */
+/* Reunion message and date boxes */
 .reunion-message,
 .reunion-date {
+  max-width: 650px;
   margin: 20px auto;
   padding: 20px 30px;
-  max-width: 650px;
   background: rgba(255, 220, 160, 0.92);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  color: #332018;
+  text-align: center;
   border: 3px solid #ff8f00;
   border-radius: 12px;
-  color: #332018;
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.18);
-  text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .reunion-message {
@@ -149,8 +152,8 @@ p {
 }
 
 .reunion-details p {
-  font-size: 0.9em;
   margin: 4px 0;
+  font-size: 0.9em;
 }
 
 .reunion-message a,
@@ -162,15 +165,16 @@ p {
 
 /* Photo year list */
 .photo-list {
-  list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .photo-list li {
   margin: 10px 0;
 }
 
+/* Photo year links */
 .photo-list a,
 .highlight-link {
   display: flex;
@@ -182,29 +186,45 @@ p {
   padding: 8px 12px;
   background-color: rgba(255, 205, 215, 0.92);
   color: #222;
-  border-radius: 6px;
-  text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  text-decoration: none;
+  border-radius: 6px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    color 0.3s ease;
 }
 
 .photo-list a:hover,
 .highlight-link:hover {
   background-color: rgba(255, 170, 195, 0.95);
-  transform: scale(1.03);
   color: #6b1b6b;
   cursor: pointer;
+  transform: scale(1.03);
 }
 
+/* Small thumbnails beside each reunion year */
 .link-thumbnail {
-  width: 50px;
-  height: 50px;
+  display: block;
+  flex-shrink: 0;
+  width: 50px !important;
+  min-width: 50px;
+  max-width: 50px;
+  height: 50px !important;
+  min-height: 50px;
+  max-height: 50px;
   object-fit: cover;
   border-radius: 4px;
-  flex-shrink: 0;
 }
 
-/* Photo gallery */
+/* Disabled photo-gallery link */
+.unavailable-link {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Photo gallery layout */
 .photo-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -217,14 +237,16 @@ p {
   line-height: 0;
 }
 
+/* Full gallery thumbnails */
 .photo-gallery img {
+  display: block;
   width: 250px;
   height: 180px;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.22);
-  transition: transform 0.2s ease;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .photo-gallery img:hover {
@@ -242,13 +264,13 @@ p {
   margin: 15px 0;
   padding: 15px 20px;
   background: rgba(235, 255, 235, 0.92);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-left: 5px solid #ff8f00;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
-  border-radius: 8px;
   font-size: 1.05em;
   text-align: left;
+  border-left: 5px solid #ff8f00;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .news-post p {
@@ -257,30 +279,30 @@ p {
 
 .news-post a {
   color: #b94700;
-  text-decoration: underline;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 /* Family tree intro */
 .tree-intro {
-  text-align: center;
   max-width: 700px;
   margin: 30px auto 20px;
-  font-size: 1.1em;
-  background: rgba(255, 255, 255, 0.88);
   padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.88);
+  font-size: 1.1em;
+  text-align: center;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 /* Family tree callout */
 .tree-callout {
-  text-align: center;
   max-width: 700px;
   margin: 30px auto;
-  font-size: 1.05em;
-  background: rgba(255, 255, 255, 0.88);
   padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.88);
+  font-size: 1.05em;
+  text-align: center;
   border-left: 4px solid #ff8f00;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
@@ -288,31 +310,31 @@ p {
 
 .tree-callout a {
   color: #b94700;
-  text-decoration: underline;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 /* General call-to-action block */
 .call-to-action {
-  text-align: center;
   margin-top: 30px;
   padding: 15px 20px;
   background: rgba(255, 255, 255, 0.82);
+  text-align: center;
   border-radius: 10px;
 }
 
 .call-to-action a {
   color: #b94700;
-  text-decoration: underline;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 /* Disqus comments */
 #disqus_thread {
-  background-color: rgba(249, 249, 249, 0.95);
-  padding: 20px;
-  border-radius: 8px;
   margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(249, 249, 249, 0.95);
+  border-radius: 8px;
 }
 
 #disqus_thread,
@@ -329,34 +351,36 @@ p {
   font-size: 1em;
 }
 
-/* Horizontal rules */
+/* Horizontal lines */
 hr {
+  width: 80%;
+  margin: 40px auto;
   border: none;
   border-top: 2px solid rgba(120, 120, 120, 0.35);
 }
 
 /* Footer */
 footer {
+  margin-top: 30px;
+  padding: 15px 0;
   background: rgba(144, 200, 130, 0.85);
   color: #111;
-  padding: 15px 0;
-  margin-top: 30px;
   text-align: center;
 }
 
 footer p {
   margin: 0;
-  font-weight: bold;
   color: #111;
+  font-weight: bold;
   letter-spacing: 1.2px;
   text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
 }
 
 footer small {
   display: block;
-  font-size: 0.8em;
   margin-top: 5px;
   color: #222;
+  font-size: 0.8em;
 }
 
 /* Mobile adjustments */
@@ -394,6 +418,17 @@ footer small {
     width: auto;
   }
 
+  /* Keep year thumbnails small on phones */
+  .link-thumbnail {
+    width: 50px !important;
+    min-width: 50px;
+    max-width: 50px;
+    height: 50px !important;
+    min-height: 50px;
+    max-height: 50px;
+  }
+
+  /* Only actual gallery photos become larger on phones */
   .photo-gallery img,
   .standard-photo {
     width: 100%;
@@ -404,10 +439,4 @@ footer small {
   .news-post {
     text-align: center;
   }
-  /* Disabled photo-gallery link */
-.unavailable-link {
-  opacity: 0.6;
-  pointer-events: none;
-  cursor: default;
-}
 }
