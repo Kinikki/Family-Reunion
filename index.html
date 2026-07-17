@@ -1,51 +1,24 @@
 <!DOCTYPE html>
 <!-- Author: Tara Brown -->
 <!-- Doc name: index.html -->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Family Reunion Home</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css?v=4">
     <link rel="icon" href="lantis.ico" type="image/x-icon">
-
-    <style>
-        /* Featured group photo */
-        .featured-photo {
-            margin: 20px auto;
-            text-align: center;
-        }
-
-        .featured-photo img {
-            max-width: 500px;
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-        }
-
-        /* Reunion message box */
-        .reunion-message {
-            margin: 20px auto;
-            padding: 20px 30px;
-            max-width: 650px;
-            background: rgba(255, 183, 77, 0.5);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 3px solid #FF8F00;
-            border-radius: 12px;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #4E342E;
-            box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
-            text-align: center;
-            line-height: 1.6;
-        }
-
-        .reunion-message a {
-            color: #FF6F00;
-            font-weight: bold;
-        }
-    </style>
 </head>
 
 <body>
@@ -53,7 +26,7 @@
         <h1>Welcome to Our Family Reunion Website</h1>
 
         <nav>
-            <a href="index.html">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="photos.html">Photo Gallery</a>
             <a href="posts.html">Family Messages</a>
             <a href="messages.html">Contact Us</a>
@@ -61,44 +34,53 @@
     </header>
 
     <main>
-        <h2>Together is our favorite place to be.</h2>
+        <p class="eyebrow">Celebrating family, memories, and tradition</p>
+
+        <h2>Together Is Our Favorite Place to Be</h2>
 
         <div class="featured-photo">
-            <img src="images/062026/Group.JPG" alt="2026 Family Reunion Group Photo">
+            <img
+                src="images/062026/Group.JPG"
+                alt="2026 Family Reunion group photo"
+            >
         </div>
 
-        <div class="reunion-message">
-            <p>Thanks for another great year!</p>
+        <section class="reunion-message">
+            <p><strong>Thanks for another great year!</strong></p>
 
             <p>
-                Don’t forget to send in your photos so we can add them to the family gallery.
+                Don’t forget to send in your photos so we can add them to the
+                family gallery.
             </p>
 
-            <p>
-                Email your photos to
+            <p class="reunion-email">
+                <span aria-hidden="true">📧</span>
                 <a href="mailto:LantisCriglerReunion@gmail.com">
                     LantisCriglerReunion@gmail.com
-                </a>.
+                </a>
             </p>
 
-            <p>Stay tuned for updates about the next reunion!</p>
-        </div>
+            <p>Stay tuned for updates about our next reunion!</p>
+        </section>
 
-        <p>Welcome to our family reunion website!</p>
+        <section class="welcome-section">
+            <p>
+                Welcome! Browse photos from past reunions, leave messages,
+                reconnect with family, and share your favorite memories.
+            </p>
+        </section>
 
-        <p>
-            Here you can see photos from past reunions, leave messages,
-            and stay up-to-date with future family events.
-        </p>
+        <h2>Reunion Updates</h2>
 
-        <h2>Latest News</h2>
+        <article class="news-post">
+            <p class="news-date">July 16, 2026</p>
 
-        <div class="news-post">
-            <p><strong>07/16/2026 – 2026 Reunion Photos Added</strong></p>
+            <h3>2026 Reunion Photos Added</h3>
 
             <p>
-                Photos from this year’s reunion are now being added to the gallery.
-                Visit the Photo Gallery page to see the memories from another great year!
+                Photos from this year’s reunion are now being added to the
+                gallery. Visit the Photo Gallery to see memories from another
+                great year.
             </p>
 
             <p>
@@ -107,14 +89,21 @@
                     LantisCriglerReunion@gmail.com
                 </a>.
             </p>
-        </div>
 
-        <p>Check back for updates about the next family reunion!</p>
-        <p>View photos, leave a message, and share your memories!</p>
+            <p class="news-button">
+                <a href="photos.html" class="button-link">
+                    View Photo Gallery
+                </a>
+            </p>
+        </article>
+
+        <p class="closing-message">
+            Check back for updates about our next family reunion!
+        </p>
     </main>
 
     <footer>
-        <p>© 2026 Our Family Reunion</p>
+        <p>&copy; 2026 Our Family Reunion</p>
         <small>Last updated: July 16, 2026</small>
     </footer>
 </body>
