@@ -1,56 +1,84 @@
 <!DOCTYPE html>
 <!-- Author: Tara Brown -->
 <!-- Doc name: posts.html -->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messages</title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>Family Messages</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css?v=4">
     <link rel="icon" href="lantis.ico" type="image/x-icon">
 </head>
+
 <body>
-    <header>
-        <h1>Family Guestbook</h1>
-        <nav>
-      <a href="index.html">Home</a>
-      <a href="photos.html">Photo Gallery</a>
-      <a href="posts.html">Family Messages</a>
-      <a href="messages.html">Contact Us</a>
-      <a href="familytree.html">Family Tree</a>
-        </nav>
-    </header>
 
-    <main>
-        <h2>Family Messages</h2>
-        <p>Use the box below to post your message to the family group chat!</p>
+<header>
+    <h1>Family Guestbook</h1>
 
-        <!-- Disqus Comments Section -->
-        <div id="disqus_thread"></div>
-        <script>
-            var disqus_config = function () {
-                this.page.url = window.location.href;
-                this.page.identifier = window.location.pathname;
-                this.language = "en";
-            };
-            (function () {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://lantiscrigler.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>
-            Please enable JavaScript to view the
-            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="photos.html">Photo Gallery</a>
+        <a href="posts.html" class="active">Family Messages</a>
+        <a href="messages.html">Contact Us</a>
+        <a href="familytree.html">Family Tree</a>
+    </nav>
+</header>
 
-        <hr>
-    </main>
+<main>
 
-    <footer>
-        <p>© 2025 Our Family Reunion</p>
-        <small>Last updated: July 16, 2026</small>
-    </footer>
+    <p class="eyebrow">Share memories with the family</p>
+
+    <h2>Family Messages</h2>
+
+    <p>
+        Leave a message, tell a story, share an update, or reconnect with
+        relatives. We'd love to hear from you!
+    </p>
+
+    <div id="disqus_thread"></div>
+
+    <script>
+        var disqus_config = function () {
+            this.page.url = window.location.href;
+            this.page.identifier = window.location.pathname;
+            this.language = "en";
+        };
+
+        (function () {
+            var d = document,
+                s = d.createElement("script");
+
+            s.src = "https://lantiscrigler.disqus.com/embed.js";
+            s.setAttribute("data-timestamp", +new Date());
+
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+    <noscript>
+        Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">
+            comments powered by Disqus.
+        </a>
+    </noscript>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Our Family Reunion</p>
+    <small>Keeping our family history and memories together.</small>
+</footer>
+
 </body>
 </html>
