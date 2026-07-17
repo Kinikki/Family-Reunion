@@ -567,42 +567,56 @@ a {
 ================================= */
 
 .news-post {
-  margin: 18px 0;
-  padding: 18px 22px;
-  background: linear-gradient(
-    135deg,
-    rgba(211, 235, 208, 0.97),
-    rgba(237, 246, 222, 0.96)
-  );
-  color: #29422e;
-  font-size: 1.05em;
-  text-align: left;
-  border-left: 6px solid #df8f55;
-  border-radius: 12px;
-  box-shadow: 0 5px 14px rgba(58, 83, 58, 0.17);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+    margin: 18px 0;
+    padding: 22px 26px;
+    background: linear-gradient(
+        135deg,
+        rgba(211, 235, 208, 0.97),
+        rgba(237, 246, 222, 0.96)
+    );
+    color: #29422e;
+    font-size: 1.05em;
+    text-align: left;
+    border-left: 6px solid #df8f55;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(58, 83, 58, 0.18);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.news-date {
+    margin: 0 0 10px;
+    color: #586551;
+    font-size: 0.9em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .news-post h3 {
-  margin-top: 0;
+    margin: 0 0 18px;
+    color: #874552;
 }
 
 .news-post p {
-  color: #29422e;
-  text-shadow: none;
+    color: #29422e;
+    text-shadow: none;
 }
 
-.news-post p:last-child {
-  margin-bottom: 0;
+.news-post a:not(.button-link) {
+    color: #8f3946;
+    font-weight: 800;
+    text-decoration: underline;
 }
 
-.news-post a {
-  color: #8f3946;
-  font-weight: 800;
-  text-decoration: underline;
+.news-button {
+    margin: 30px 0 5px;
+    text-align: center;
 }
 
+.news-button .button-link {
+    display: inline-block;
+}
 
 /* =================================
    FAMILY TREE SECTIONS
