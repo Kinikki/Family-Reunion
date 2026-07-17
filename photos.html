@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <!-- Author: Tara Brown -->
 <!-- Doc name: photos.html -->
-<html lang="en">
 
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Family Photos</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css?v=4">
   <link rel="icon" href="lantis.ico" type="image/x-icon">
 </head>
 
 <body>
-
   <header>
     <h1>Family Reunion Photo Gallery</h1>
 
     <nav>
       <a href="index.html">Home</a>
-      <a href="photos.html">Photo Gallery</a>
+      <a href="photos.html" class="active">Photo Gallery</a>
       <a href="posts.html">Family Messages</a>
       <a href="messages.html">Contact Us</a>
       <a href="familytree.html">Family Tree</a>
@@ -28,11 +35,11 @@
   </header>
 
   <main>
+    <p class="eyebrow">Celebrating our memories together</p>
 
     <h2>Our Memories by Year</h2>
 
     <ul class="photo-list">
-
       <li>
         <a href="06.20.26.html" class="highlight-link">
           <img
@@ -40,7 +47,7 @@
             alt="2026 Family Reunion group photo"
             class="link-thumbnail"
           >
-          2026 – Englewood MetroPark
+          <span>2026 - Englewood MetroPark</span>
         </a>
       </li>
 
@@ -51,47 +58,40 @@
             alt="2025 Family Reunion group photo"
             class="link-thumbnail"
           >
-          2025 – Germantown MetroPark
+          <span>2025 - Germantown MetroPark</span>
         </a>
       </li>
-
     </ul>
 
     <h2>Legacy Gallery</h2>
 
     <ul class="photo-list">
-
       <li>
         <span class="highlight-link unavailable-link">
           <img
             src="lantis.ico"
-            alt="Coming soon"
+            alt=""
             class="link-thumbnail"
           >
-          Older Family Photos – In Progress
+          <span>Older Family Photos - In Progress</span>
         </span>
       </li>
-
     </ul>
 
-    <div class="call-to-action">
+    <section class="call-to-action">
       <p>
         Have family photos to share? Email them to
         <a href="mailto:LantisCriglerReunion@gmail.com">
           LantisCriglerReunion@gmail.com
         </a>
-        and include names, dates, and any fun details!
+        and include names, dates, and any fun details.
       </p>
-    </div>
-
-    <hr>
-
+    </section>
   </main>
 
   <footer>
-    <p>© 2026 Our Family Reunion</p>
+    <p>&copy; 2026 Our Family Reunion</p>
     <small>Last updated: July 16, 2026</small>
   </footer>
-
 </body>
 </html>
