@@ -404,6 +404,117 @@ a {
   cursor: default;
 }
 
+/* =================================
+   CONTACT PAGE
+================================= */
+
+.contact-page {
+  max-width: 720px;
+}
+
+.contact-card {
+  padding: 24px 28px;
+  background: linear-gradient(
+    135deg,
+    rgba(214, 237, 211, 0.97),
+    rgba(245, 240, 211, 0.96)
+  );
+  color: #29422e;
+  text-align: left;
+  border: 2px solid rgba(100, 148, 102, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 7px 18px rgba(58, 83, 58, 0.18);
+}
+
+.contact-card h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.contact-card p {
+  color: #29422e;
+  text-align: center;
+  text-shadow: none;
+}
+
+.contact-card a {
+  color: #8e3946;
+  font-weight: 800;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  margin-top: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.contact-form label {
+  color: #29422e;
+  font-weight: 800;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 11px 12px;
+  color: #2d2926;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  background: rgba(255, 252, 245, 0.96);
+  border: 2px solid rgba(92, 133, 91, 0.38);
+  border-radius: 8px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #984754;
+  box-shadow: 0 0 0 3px rgba(152, 71, 84, 0.16);
+}
+
+.submit-button {
+  align-self: center;
+  min-width: 170px;
+  padding: 11px 22px;
+  background: linear-gradient(135deg, #c96c78, #9e4755);
+  color: #fff;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: 800;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-radius: 25px;
+  box-shadow: 0 4px 11px rgba(97, 46, 54, 0.28);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.25s ease;
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #b95c69, #873b48);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 15px rgba(97, 46, 54, 0.34);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
 
 /* =================================
    PHOTO GALLERY
